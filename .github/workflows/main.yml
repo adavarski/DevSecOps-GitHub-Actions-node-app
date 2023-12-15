@@ -9,7 +9,94 @@ on:
     branches: [ "**" ]
 
 jobs:
-  deploy-app-on-kind:
+  sca_scan:
+   name: Run Snyk Scan
+   runs-on: ubuntu-latest
+
+   steps:
+   - name: Checkout code
+     uses: actions/checkout@v2
+
+   - name: Run the SCA Snyk scan on the source code
+     uses: snyk/actions/node@master
+     continue-on-error: true
+     env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }} 
+     with:
+        args: --severity-threshold=high --sarif-file-output=snyk-report.sarif
+        
+   - name: Upload Artifact
+     uses: actions/upload-artifact@v3
+     if: always()
+     with:
+      name: snyk-findings
+      path: snyk-report.sarif
+
+  image_scan:
+   name: Build Image and Run Image Scan
+   runs-on: ubuntu-latest
+
+   steps:
+   - name: Checkout code
+     uses: actions/checkout@v2
+
+   - name: Set up Docker
+     uses: docker-practice/actions-setup-docker@v1
+     with:
+      docker_version: '20.10.7'
+
+   - name: Build Docker Image
+     run: docker build -f Dockerfile -t davarski/k8s-demo-app:v1.0 .
+
+   - name: Docker Scout Scan
+     uses: docker/scout-action@v1
+     with:
+       dockerhub-user: ${{ secrets.DOCKERHUB_USERNAME }}
+       dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
+       command: quickview,cves
+       only-severities: critical,high
+       sarif-file: scout-report.sarif
+       
+   - name: Upload Artifact
+     uses: actions/upload-artifact@v3
+     if: always()
+     with:
+      name: scout-findings
+      path: scout-report.sarif
+
+   - name: Login to DockerHub
+     uses: docker/login-action@v2
+     with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+   - name: Build, tag, and push image to DockerHub
+  
+     run: |
+        # Build a docker container and push it to DockerHub
+        docker build -t davarski/k8s-demo-app:v1.0 .
+        echo "Pushing image to DockeHub..."
+        docker push davarski/k8s-demo-app:v1.0 .
+
+
+#   - name: Login to DockerHub
+#     uses: docker/login-action@v2
+#     with:
+#        username: ${{ secrets.DOCKERHUB_USERNAME }}
+#        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+   
+#   - name: Build, tag, and push image to DockerHub
+  
+#     run: |
+        # Build a docker container and push it to DockerHub
+#        git_hash=$(git rev-parse --short "$GITHUB_SHA")
+#        docker build -t davarski/devsecops-demo:${GITHUB_REF##*/}-$git_hash .
+#        echo "Pushing image to DockeHub..."
+#        docker push davarski/devsecops-demo:${GITHUB_REF##*/}-$git_hash
+
+
+  deploy-app-on-k3d-and-zap-scan:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -45,7 +132,7 @@ jobs:
         # times out. Should add a timeout condition to the loop.
         run: |
           while [[ $(kubectl get pods -n default -l app=webapp -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "waiting for pod" && sleep 1; done
-
+          sleep 10
       - name: Port Forward to Service
         run: 'kubectl port-forward -n default service/webapp-service 3000:3000 &'
 
