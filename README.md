@@ -70,19 +70,23 @@ This demo app shows a simple user profile app set up using
 
 ```
 
-
+### Local development
 docker-compose up -d
 
-open mongo-express from browser
+Open mongo-express from browser
 
 http://localhost:8080
 
-create my-db db and users collection in mongo-express
-start your nodejs application locally - go to app directory of project
+Create my-db db and users collection in mongo-express
+Start your nodejs application locally - go to app directory of project
 
 cd app
 npm install 
 node server.js
+
+Access you nodejs application UI from browser
+
+http://localhost:3000
 ```
 
 ### Build & Push docker image 
