@@ -68,6 +68,13 @@ This demo app shows a simple user profile app set up using
 - nodejs backend with express module
 - mongodb for data storage
 
+```
+docker-compose up -d
+cd app
+npm install
+node server.js
+```
+
 ### Build & Push docker image 
 ```
     docker build -t davarski/k8s-demo-app:v1.0 .
