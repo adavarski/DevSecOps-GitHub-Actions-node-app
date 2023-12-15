@@ -1,9 +1,6 @@
 
 ## DevSecOps pipelines/workflows with Github Actions
 
-Overview: 
-
-<img src="pictures/DevSecOps-pipeline-GH-Actions-python-app.png?raw=true" width="1000">
 
 ### SCA Scan with Snyk:
 
@@ -31,7 +28,8 @@ Ref: Docker Scout Links:
 - Docker Scout CLI: https://docs.docker.com/engine/reference/commandline/scout/ && https://github.com/docker/scout-cli
 - Docker Scout GitHub Action: https://github.com/docker/scout-action && https://docs.docker.com/scout/integrations/ci/gha/
 
-  
+### Deploy app to k8s (k3d) and OWASP ZAP Scan
+
 ### How to generate scan reports (Snyk & Docker Scout)
 
 ### How to analyze scan reports (json & serif report files)
