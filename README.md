@@ -92,8 +92,44 @@ kind create cluster --name node
 ```
 kubectl apply -f ./k8s/
 
+$ cat k8s/mongo-secret.yaml
 $ echo "bW9uZ291c2Vy=="|base64 -d
 $ echo "bW9uZ29wYXNzd29yZA=="|base64 -d
+
+$ kubectl exec -it mongo-deployment-65ffdd9df6-vh9cd /bin/bash
+kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
+root@mongo-deployment-65ffdd9df6-vh9cd:/# mongo -u "mongouser" -p mongopassword --authenticationDatabase "admin"
+MongoDB shell version v5.0.23
+connecting to: mongodb://127.0.0.1:27017/?authSource=admin&compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("aa2eeaf5-41a6-4e10-9a5d-4390f9356442") }
+MongoDB server version: 5.0.23
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+---
+The server generated these startup warnings when booting: 
+        2023-12-15T13:05:42.999+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+my-db   0.000GB
+
+> use my-db
+switched to db my-db
+> show collections
+users
+
+> db.users.find()
+{ "_id" : ObjectId("657c4fbb7ece34696a0a9838"), "userid" : 1, "email" : "anna.smith@example.com", "interests" : "coding,k8s, tttt", "name" : "An davdddd" }
+> 
+
+
 ```
 ```
 ##### get basic info about k8s components
