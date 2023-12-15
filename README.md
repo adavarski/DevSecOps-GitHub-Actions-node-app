@@ -82,6 +82,7 @@ Open mongo-express from browser
 http://localhost:8080
 
 Create my-db db and users collection in mongo-express
+
 Start your nodejs application locally - go to app directory of project
 
 cd app
@@ -123,7 +124,7 @@ $ echo "bW9uZ29wYXNzd29yZA=="|base64 -d
 
 kubectl port-forward svc/webapp-service 3000:3000
 
-Browser: http://localhost:3000 ---> update user 
+Browser: http://localhost:3000 ---> add new user 
 
 $ kubectl exec -it mongo-deployment-65ffdd9df6-vh9cd /bin/bash
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
@@ -155,7 +156,7 @@ switched to db my-db
 users
 
 > db.users.find()
-{ "_id" : ObjectId("657c4fbb7ece34696a0a9838"), "userid" : 1, "email" : "an.smith@example.com", "interests" : "coding,k8s", "name" : "An dav" }
+{ "_id" : ObjectId("657c4fbb7ece34696a0a9838"), "userid" : 1, "email" : "ana.smith@example.com", "interests" : "coding,k8s", "name" : "Ana Smith" }
 > 
 
 
