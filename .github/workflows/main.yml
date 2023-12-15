@@ -86,7 +86,7 @@ jobs:
         # Build a docker container and push it to DockerHub
         docker build -t davarski/k8s-demo-app:v1.0 .
         echo "Pushing image to DockeHub..."
-        docker push davarski/k8s-demo-app:v1.0 .
+        docker push davarski/k8s-demo-app:v1.0 
 
 
 #   - name: Login to DockerHub
@@ -151,9 +151,6 @@ jobs:
           curl -v localhost:3000
 
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.7.0
+        uses: zaproxy/action-baseline@v0.10.0
         with:
-          docker_name: 'owasp/zap2docker-stable'
           target: 'http://localhost:3000'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'    
