@@ -69,9 +69,19 @@ This demo app shows a simple user profile app set up using
 - mongodb for data storage
 
 ```
+
+
 docker-compose up -d
+
+open mongo-express from browser
+
+http://localhost:8080
+
+create my-db db and users collection in mongo-express
+start your nodejs application locally - go to app directory of project
+
 cd app
-npm install
+npm install 
 node server.js
 ```
 
