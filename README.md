@@ -20,8 +20,9 @@ This demo app shows a simple user profile app set up using
 - mongo.yaml
 - webapp.yaml
 
-##### start KinD
+##### start K3d || KinD
 ```
+k3d cluster create node
 kind create cluster --name node
 ```
 #### Apply k8s manifests
@@ -50,8 +51,9 @@ kubectl apply -f ./k8s/
 
 kubectl port-forward svc/webapp-service 3000:3000
 ```
-##### delete Kind cluster
+##### delete K3d || Kind cluster
 ```
+k3d cluster delete node
 kind delete cluster --name=node
 ```
 #### Links
