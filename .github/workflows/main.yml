@@ -17,6 +17,14 @@ jobs:
    - name: Checkout code
      uses: actions/checkout@v2
 
+   - name: Set up JDK 11
+     uses: actions/setup-node@v2
+
+   - name: npm install
+        run:|
+           cd ./app
+           npm install
+
    - name: Run the SCA Snyk scan on the source code
      uses: snyk/actions/node@master
      continue-on-error: true
