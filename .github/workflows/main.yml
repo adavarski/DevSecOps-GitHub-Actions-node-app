@@ -1,0 +1,58 @@
+name: Test with KinD
+
+on: pull_request
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch history
+        run: git fetch --prune --unshallow
+
+      - name: Run chart-testing (lint)
+        id: lint
+        uses: helm/chart-testing-action@v1.0.0
+        with:
+          command: lint
+
+      - name: Create kind cluster
+        uses: helm/kind-action@v1.0.0
+        # Only build a kind cluster if there are chart changes to test.
+        if: steps.lint.outputs.changed == 'true'
+
+      - name: Run chart-testing (install)
+        if: steps.lint.outputs.changed == 'true'
+        uses: helm/chart-testing-action@v1.0.0
+        with:
+          command: install
+
+      - name: Install chart
+        if: steps.lint.outputs.changed == 'true'
+        run: |
+          kubectl create namespace hello
+          helm install hello-kubernetes --namespace hello --generate-name
+
+      - name: List pods
+        if: steps.lint.outputs.changed == 'true'
+        run: |
+          kubectl get pods --all-namespaces
+          kubectl get services --all-namespaces
+
+      - name: Wait for app
+        if: steps.lint.outputs.changed == 'true'
+        # TODO: If the Pods never become Ready, e.g. because of config or image problems, this will hang until the workflow
+        # times out. Should add a timeout condition to the loop.
+        run: |
+          while [[ $(kubectl get pods -n hello -l app=hello-kubernetes -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True True" ]]; do echo "waiting for pod" && sleep 1; done
+
+      - name: Port Forward to Service
+        if: steps.lint.outputs.changed == 'true'
+        run: 'kubectl port-forward -n hello service/hello-service 8081:80 &'
+
+      - name: Test App
+        if: steps.lint.outputs.changed == 'true'
+        run: |
+          curl -v localhost:8081
