@@ -91,6 +91,9 @@ kind create cluster --name node
 #### Apply k8s manifests
 ```
 kubectl apply -f ./k8s/
+
+$ echo "bW9uZ291c2Vy=="|base64 -d
+$ echo "bW9uZ29wYXNzd29yZA=="|base64 -d
 ```
 ```
 ##### get basic info about k8s components
