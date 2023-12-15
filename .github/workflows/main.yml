@@ -47,7 +47,6 @@ jobs:
           while [[ $(kubectl get pods -n default -l app=webapp -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "waiting for pod" && sleep 1; done
 
       - name: Port Forward to Service
-        if: steps.lint.outputs.changed == 'true'
         run: 'kubectl port-forward -n default service/webapp-service 3000:3000 &'
 
       - name: Test App
