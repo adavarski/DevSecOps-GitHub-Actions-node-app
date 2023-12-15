@@ -81,7 +81,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
    - name: Build, tag, and push image to DockerHub
-  
+    # if: steps.lint.outputs.changed == 'true' OR if scans are OK 
      run: |
         # Build a docker container and push it to DockerHub
         docker build -t davarski/k8s-demo-app:v1.0 .
