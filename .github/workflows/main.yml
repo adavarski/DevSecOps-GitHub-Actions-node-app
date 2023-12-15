@@ -15,8 +15,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Create kind cluster
-        uses: helm/kind-action@v1.0.0
+#      - name: Create kind cluster
+#        uses: helm/kind-action@v1.0.0
+
+      
+      - name: "Create single k3d Cluster with imported Registry"
+        uses: AbsaOSS/k3d-action@v2
+        with:
+          cluster-name: CICD-test-cluster
+          args: >-
+            --agents 3
+            --no-lb
+            --k3s-arg "--no-deploy=traefik,servicelb,metrics-server@server:*"
 
       - name: Apply k8s manifests
         run: |
