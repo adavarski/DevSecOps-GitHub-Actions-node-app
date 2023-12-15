@@ -32,7 +32,7 @@ Ref: Docker Scout Links:
 
 Note: K8s is Kubernetes. K3s is a lightweight K8s distribution. K3d is a wrapper to run K3s in Docker. K3d/K3s are especially good for development and CI purposes, as it takes only 20-30 seconds of time till the cluster is ready (for comparison, Kind/Minikube takes more time till ready)
 
-Then follow the following steps for fixing Zap scan error "Resource not accessible by integration"
+Note: Follow the following steps for fixing ZAP scan error "Resource not accessible by integration"
 
 1) Go to Settings of the repo
 
@@ -49,7 +49,7 @@ Then follow the following steps for fixing Zap scan error "Resource not accessib
 8) Click on Save button to save your changes.
 
 
-### How to generate scan reports (Snyk & Docker Scout)
+### How to generate scan reports (Snyk & Docker Scout & OWASP ZAP)
 
 ### How to analyze scan reports (json & serif report files)
 
