@@ -96,6 +96,10 @@ $ cat k8s/mongo-secret.yaml
 $ echo "bW9uZ291c2Vy=="|base64 -d
 $ echo "bW9uZ29wYXNzd29yZA=="|base64 -d
 
+kubectl port-forward svc/webapp-service 3000:3000
+
+Browser: http://localhost:3000 ---> update user 
+
 $ kubectl exec -it mongo-deployment-65ffdd9df6-vh9cd /bin/bash
 kubectl exec [POD] [COMMAND] is DEPRECATED and will be removed in a future version. Use kubectl exec [POD] -- [COMMAND] instead.
 root@mongo-deployment-65ffdd9df6-vh9cd:/# mongo -u "mongouser" -p mongopassword --authenticationDatabase "admin"
@@ -126,7 +130,7 @@ switched to db my-db
 users
 
 > db.users.find()
-{ "_id" : ObjectId("657c4fbb7ece34696a0a9838"), "userid" : 1, "email" : "anna.smith@example.com", "interests" : "coding,k8s, tttt", "name" : "An davdddd" }
+{ "_id" : ObjectId("657c4fbb7ece34696a0a9838"), "userid" : 1, "email" : "an.smith@example.com", "interests" : "coding,k8s", "name" : "An dav" }
 > 
 
 
