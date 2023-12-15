@@ -44,7 +44,7 @@ jobs:
         # TODO: If the Pods never become Ready, e.g. because of config or image problems, this will hang until the workflow
         # times out. Should add a timeout condition to the loop.
         run: |
-          while [[ $(kubectl get pods -n default -l app=webapp -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True True" ]]; do echo "waiting for pod" && sleep 1; done
+          while [[ $(kubectl get pods -n default -l app=webapp -o 'jsonpath={..status.conditions[?(@.type=="Ready")].status}') != "True" ]]; do echo "waiting for pod" && sleep 1; done
 
       - name: Port Forward to Service
         if: steps.lint.outputs.changed == 'true'
