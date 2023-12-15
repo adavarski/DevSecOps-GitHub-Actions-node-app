@@ -23,7 +23,7 @@ jobs:
      env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }} 
      with:
-        args: --severity-threshold=high --sarif-file-output=snyk-report.sarif
+        args: --file=app/package.json --severity-threshold=high --sarif-file-output=snyk-report.sarif
         
    - name: Upload Artifact
      uses: actions/upload-artifact@v3
