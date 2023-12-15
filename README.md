@@ -99,7 +99,7 @@ http://localhost:3000
     docker build -t davarski/k8s-demo-app:v1.0 .
     docker push davarski/k8s-demo-app:v1.0
 ```  
-## K8s 
+## K8s local deploy
 
 ### K8s manifests
 
@@ -119,6 +119,7 @@ kind create cluster --name node
 kubectl apply -f ./k8s/
 
 $ cat k8s/mongo-secret.yaml
+
 $ echo "bW9uZ291c2Vy=="|base64 -d
 $ echo "bW9uZ29wYXNzd29yZA=="|base64 -d
 
@@ -158,7 +159,6 @@ users
 > db.users.find()
 { "_id" : ObjectId("657c4fbb7ece34696a0a9838"), "userid" : 1, "email" : "ana.smith@example.com", "interests" : "coding,k8s", "name" : "Ana Smith" }
 > 
-
 
 ```
 ```
