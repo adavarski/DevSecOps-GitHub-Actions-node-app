@@ -67,6 +67,8 @@ Monitor vulnerabilities in dependencies used in your project and keep your depen
 
 Ref: https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide
 
+Ref: https://docs.github.com/en/code-security/dependabot
+
 ### GH Actions References: 
 
 List of GitHub Actions:
