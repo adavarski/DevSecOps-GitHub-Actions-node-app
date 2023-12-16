@@ -48,6 +48,9 @@ Note: Follow the following steps for fixing ZAP scan error "Resource not accessi
 
 8) Click on Save button to save your changes.
 
+Ref: https://github.com/zaproxy/action-baseline
+
+Ref: https://github.com/zaproxy/action-full-scan
 
 ### How to generate scan reports (Snyk & Docker Scout & OWASP ZAP)
 
