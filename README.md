@@ -1,7 +1,9 @@
 
 ## DevSecOps pipelines/workflows with Github Actions
 
-.[![CI_DevSecOps]([https://github.com/adavarski/DevSecOps-GitHub-Actions-node-app/workflows/CI_DevSecOps/badge.svg](https://github.com/adavarski/DevSecOps-Github-Actions-node-app/actions)
+
+[![CI_DevSecOps](https://github.com/adavarski/DevSecOps-GitHub-Actions-node-app/workflows/CI_DevSecOps/badge.svg)](https://github.com/adavarski/DevSevOps-GitHub-Actions-node-app/actions)
+
 
 ### SCA Scan with Snyk:
 
