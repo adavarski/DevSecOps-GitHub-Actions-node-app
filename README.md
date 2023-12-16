@@ -13,7 +13,7 @@ Ref: Snyk:
 
 Note: https://app.snyk.io/account to get SNYK_TOKEN
 
-Note: We can use Bandit && Snyk for SAST & SCA (Software Composition Analysis) and Docker Scout for Docker Image scanning: (Bitbucket use Snyk for SCA for example)
+Note: We can use Snyk for SCA (Software Composition Analysis) and Docker Scout for Docker Image scanning: (Bitbucket use Snyk for SCA for example)
 
 Note: We can upload result (serif report) to GitHub Code Scanning using GitHub Action -> github/codeql-action/upload-sarif@v2 (Snyk GitHub integration @https://app.snyk.io/org/adavarski -> https://docs.snyk.io/integrate-with-snyk/git-repositories-scms-integrations-with-snyk/snyk-github-integration)
 
