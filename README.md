@@ -62,6 +62,11 @@ https://www.defectdojo.org
 
 Repo "Settings" - < Code Security and Analysis (setup Code scanning: Advanced workflow and view report after CodeQL workflow execution)
 
+### Keeping supply chain secure with Dependabot
+Monitor vulnerabilities in dependencies used in your project and keep your dependencies up-to-date with Dependabot.
+
+Ref: https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide
+
 ### GH Actions References: 
 
 List of GitHub Actions:
