@@ -72,6 +72,10 @@ Ref: https://docs.github.com/en/code-security/getting-started/dependabot-quickst
 
 Ref: https://docs.github.com/en/code-security/dependabot
 
+Ref: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions
+
+Ref: https://github.blog/2022-09-09-sca-vs-sast-what-are-they-and-which-one-is-right-for-you/
+
 ### GH Actions References: 
 
 List of GitHub Actions:
