@@ -79,7 +79,7 @@ Ref: https://docs.github.com/en/code-security/dependabot/working-with-dependabot
 
 Ref: https://github.blog/2022-09-09-sca-vs-sast-what-are-they-and-which-one-is-right-for-you/
 
-Note: Dependabot raises pull requests to update dependencies. Depending on how your repository is configured, Dependabot may raise pull requests for version updates and/or for security updates. You manage these pull requests in the same way as any other pull request, but there are also some extra commands available. For information about enabling Dependabot dependency updates, see "Configuring Dependabot security updates" and "Configuring Dependabot version updates."
+Note: Dependabot raises pull requests to update dependencies. Depending on how your repository is configured, Dependabot may raise pull requests for version updates and/or for security updates. You manage these pull requests in the same way as any other pull request, but there are also some extra commands available. For information about enabling Dependabot dependency updates, see ["Configuring Dependabot security updates"](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates) and ["Configuring Dependabot version updates."](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates)
 
 ### GH Actions References: 
 
