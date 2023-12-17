@@ -164,3 +164,14 @@ jobs:
         uses: zaproxy/action-baseline@v0.10.0
         with:
           target: 'http://localhost:3000'
+
+#    - name: run the docker image
+#      run: |
+#          docker run -d -p 3000:3000 ${{ secrets.DOCKERHUB_USERNAME }}/k8s-demo-app:v1.0
+#     - name: ZAP Scan
+#        uses: zaproxy/action-baseline@v0.9.0
+#        with:
+#          target: 'http://localhost:3000'
+#          allow_issue_writing: true
+#          token: ${{ secrets.GITHUB_TOKEN }}
+          
