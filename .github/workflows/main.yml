@@ -77,7 +77,7 @@ jobs:
 #   - name: Run Trivy vulnerability scanner
 #     uses: aquasecurity/trivy-action@master
 #     with:
-#        image-ref: ${{ secrets.DOCKER_HUB_USERNAME }}/fastapi:latest
+#        image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/k8s-demo-app:v1.0
 #        format: 'table'
 #        exit-code: '1'
 #        ignore-unfixed: true
