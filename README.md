@@ -60,7 +60,7 @@ Ref: https://github.com/zaproxy/action-baseline
 
 Ref: https://github.com/zaproxy/action-full-scan
 
-### How to generate scan reports (Snyk & Docker Scout & OWASP ZAP)
+### How to generate scan reports (Snyk & Docker Scout Trivy & OWASP ZAP)
 
 ### How to analyze scan reports (json & serif report files)
 
@@ -71,10 +71,10 @@ https://www.defectdojo.org
 
 ### GitHub Code Scanning using GitHub Actions and Github CodeQL for Code scanning (SAST : Static Application Security Testing)
 
-Repo "Settings" - < Code Security and Analysis (setup Code scanning: Advanced workflow and view report after CodeQL workflow execution)
+Repo "Settings" - < Code Security and Analysis (setup Code scanning: Advanced -> codeql.yml workflow and view report after CodeQL workflow execution)
 
 ### Keeping supply chain secure with GitHub Dependabot (SCA : Software Composition Analysis)
-Monitor vulnerabilities in dependencies used in your project and keep your dependencies up-to-date with Dependabot.
+Monitor vulnerabilities in dependencies used in your project and keep your dependencies up-to-date with Dependabot (dependabot.yml)
 
 Ref: https://docs.github.com/en/code-security/getting-started/dependabot-quickstart-guide
 
