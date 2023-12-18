@@ -159,6 +159,11 @@ kind create cluster --name node
 ```
 #### Apply k8s manifests
 ```
+
+file mongo-secret.yaml
+echo -n "mongouser"|base64
+echo -n "mongpassword"|base64
+
 kubectl apply -f ./k8s/
 
 $ cat k8s/mongo-secret.yaml
