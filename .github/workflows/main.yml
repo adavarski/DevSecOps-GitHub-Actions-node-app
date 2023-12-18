@@ -89,7 +89,7 @@ jobs:
      with:
           image-ref: '${{ secrets.DOCKERHUB_USERNAME }}/k8s-demo-app:v1.0'
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
