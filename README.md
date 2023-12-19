@@ -14,7 +14,7 @@ Ref: Snyk:
 - https://github.com/snyk/actions/tree/master/python-3.8
 - https://snyk.io/partners/docker/ (Snyk: Configure integration for DockerHub for docker images scanning : https://docs.snyk.io/integrate-with-snyk/snyk-container-integrations/container-security-with-docker-hub-integration/configure-integration-for-docker-hub)
 
-Note: https://app.snyk.io/account to get SNYK_TOKEN ( login with GH)
+Note: https://app.snyk.io/account to get SNYK_TOKEN ( login with GH). Add Snyk API Token in GitHub Repositority Secrets - SNYK_TOKEN
 
 Note: We can use Snyk for SCA (Software Composition Analysis) and Docker Scout for Docker Image scanning: (Bitbucket use Snyk for SCA for example)
 
