@@ -74,6 +74,8 @@ https://docs.github.com/en/code-security/code-scanning/integrating-with-code-sca
 
 https://www.defectdojo.org
 
+https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml (example python script to upload scan results to defectdojo)
+
 ### GitHub Code Scanning using GitHub Actions and Github CodeQL for Code scanning (SAST : Static Application Security Testing)
 
 Repo "Settings" - < Code Security and Analysis (setup Code scanning: Advanced -> codeql.yml workflow and view report after CodeQL workflow execution)
