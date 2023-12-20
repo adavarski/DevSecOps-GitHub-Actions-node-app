@@ -86,6 +86,8 @@ https://docs.github.com/en/code-security/code-scanning/integrating-with-code-sca
 
 https://www.defectdojo.org
 
+https://github.com/DefectDojo/django-DefectDojo
+
 Add Product -> Add Engagemets (Import Scan results: SARIF files) -> Findings
 
 TODO: defectdojo_send_scans.py or use/create GitHub action
