@@ -86,6 +86,8 @@ https://docs.github.com/en/code-security/code-scanning/integrating-with-code-sca
 
 https://www.defectdojo.org
 
+Add Product -> Add Engagenets (Import Scan results: SARIF files) -> Findings 
+
 https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml (example python script to upload scan results to defectdojo)
 
 ### GitHub Code Scanning using GitHub Actions and Github CodeQL for Code scanning (SAST : Static Application Security Testing)
