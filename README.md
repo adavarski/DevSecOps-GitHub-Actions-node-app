@@ -4,6 +4,18 @@
 
 [![CI_DevSecOps](https://github.com/adavarski/DevSecOps-GitHub-Actions-node-app/workflows/CI_DevSecOps/badge.svg)](https://github.com/adavarski/DevSevOps-GitHub-Actions-node-app/actions)
 
+## GitHub Actions Used 
+
+| Step                                                    | Github Action                                                                            | Comments | Open Source Alternative                             |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------- | --------------------------------------------------- |
+| SCA: Software Composition Analysis (Dependency Checker) | [snyk](https://github.com/marketplace/actions/snyk)                                      |          | OWASP Dependency Check                              |
+| SCA: Software Composition Analysis (Dependency Checker) | GitHub Dependabot                                                                        |          |                                                     |
+| SAST: Static Code Analysis                              | [CodeQL](https://github.com/github/codeql-action)                                        |          |                                                     |
+| Container Scan                                          | [Docker Scout](https://github.com/marketplace/actions/docker-scout)                      |          |                                                     |
+| Container Scan                                          | [Trivy](https://github.com/marketplace/actions/aqua-security-trivy)                      |          |                                                     |
+| DAST: Dynamic Application Security Testing              | [OWASP ZAP Basline Scan](https://github.com/marketplace/actions/owasp-zap-baseline-scan) |          |                                                     |
+
+
 
 ### SCA Scan with Snyk:
 
