@@ -84,7 +84,9 @@ Ref: https://github.com/adavarski/k3d-GH-Actions
 Ref: 
 https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning
 
-https://www.defectdojo.org
+SARIF (Static Analysis Results Interchange Format) 
+
+Example: https://www.defectdojo.org
 
 https://github.com/DefectDojo/django-DefectDojo
 
