@@ -103,7 +103,7 @@ class Defectdojo(object):
          "active": True,
          "verified": True,
          },
-         "files": {"file": open("snyk-report.sari")}
+         "files": {"file": open("snyk-report.sarif")}
      }
     # Import to Defectdojo
     #response = requests.post(f"{url}/import-scan/", headers=headers, files=scan_payload)
