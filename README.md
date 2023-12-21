@@ -89,7 +89,7 @@ Ref: https://github.com/adavarski/k3d-GH-Actions
 Ref: 
 https://docs.github.com/en/code-security/code-scanning/integrating-with-code-scanning/sarif-support-for-code-scanning
 
-SARIF (Static Analysis Results Interchange Format) 
+SARIF (Static Analysis Results Interchange Format) - Ref: https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=sarif
 
 Example: https://www.defectdojo.org (vulnerability management tool)
 
