@@ -88,7 +88,9 @@ SARIF (Static Analysis Results Interchange Format)
 
 Example: https://www.defectdojo.org (vulnerability management tool)
 
-Ref: https://github.com/DefectDojo/django-DefectDojo
+DefectDojo is a well-known vulnerability management tool. It allows you to gather security issues from other tools.
+
+Ref (installation): https://github.com/DefectDojo/django-DefectDojo
 
 Defectdojo UI: Add Product -> Add Engagemets (Import Scan results: SARIF/etc. files) -> Findings
 
