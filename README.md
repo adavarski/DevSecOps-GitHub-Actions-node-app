@@ -105,6 +105,8 @@ Defectdojo UI: Add Product(example:NODE-WEB-APP)-> Add New CI/CD Engagemets (exa
 export DEFECT_DOJO_API_TOKEN=<API v2 Key>
 python3 defectdojo_import_scan.py --host http://192.168.1.99:8080 --product NODE-WEB-APP ---engagement scout --report scout-report.sarif
 
+export $DEFECT_DOJO_API_TOKEN
+python3 defectdojo_import_scan.py --host $DEFECTDOJO_URL --product $PRODUCT --engagement $ENGAGEMENT  --report $REPORT || true
 ```
 
 Note: Example python script to upload scan results to defectdoj -> https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml
