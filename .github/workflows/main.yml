@@ -199,24 +199,24 @@ jobs:
 #          allow_issue_writing: true
 #          token: ${{ secrets.GITHUB_TOKEN }}
           
-  defectdojo_import_scan:
-   name: Import Scout to DefectDojo
-   runs-on: ubuntu-latest
+#  defectdojo_import_scan:
+#   name: Import Scout to DefectDojo
+#   runs-on: ubuntu-latest
 
-   steps:
-   - name: Checkout code
-     uses: actions/checkout@v2
+#   steps:
+#   - name: Checkout code
+#     uses: actions/checkout@v2
 
-   - name: Set up Python
-     uses: actions/setup-python@v2
-     with:
-       python-version: 3.8
+#   - name: Set up Python
+#     uses: actions/setup-python@v2
+#     with:
+#       python-version: 3.8
 
-   - name: Install Requests
-     run: pip install requests
+#   - name: Install Requests
+#     run: pip install requests
  
-   - name: Import Scout Scan 
-     run: |
-        export DEFECT_DOJO_API_TOKEN=548afd6fab3bea9794a41b31da0e9404f733e222
-        python3 defectdojo_import_scan.py --host http://demo.defectdojo.org --product NODE-WEB-APP ---engagement scout --report scout-report.sarif
+#   - name: Import Scout Scan 
+#     run: |
+#        export DEFECT_DOJO_API_TOKEN=548afd6fab3bea9794a41b31da0e9404f733e222
+#        python3 defectdojo_import_scan.py --host http://demo.defectdojo.org --product NODE-WEB-APP ---engagement scout --report scout-report.sarif
 
