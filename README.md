@@ -111,6 +111,8 @@ python3 defectdojo_import_scan.py --host http://192.168.1.99:8080 --product NODE
 pip3 install requests
 export $DEFECT_DOJO_API_TOKEN
 python3 defectdojo_import_scan.py --host $DEFECTDOJO_URL --product $PRODUCT --engagement $ENGAGEMENT  --report $REPORT || true
+
+curl -X POST "http://192.168.1.99:8080/api/v2/import-scan/" -H Authorization:"Token c3f230eb846149d1d7e180dda5215b591f2346d8" -F scan_type="SARIF" -F file=@"scout-report.sarif" -F engagement=4 -H Content-Type:multipart/form-data -H accept:application/json 
 ```
 
 Note: Example python script to upload scan results to defectdoj -> https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml
