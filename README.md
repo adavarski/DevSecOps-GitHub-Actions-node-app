@@ -102,9 +102,11 @@ Example:
 
 Defectdojo UI: Add Product(example:NODE-WEB-APP)-> Add New CI/CD Engagemets (example: scout) && Add Tests (Test type: SARIF) 
 
+pip3 install requests
 export DEFECT_DOJO_API_TOKEN=<API v2 Key>
 python3 defectdojo_import_scan.py --host http://192.168.1.99:8080 --product NODE-WEB-APP ---engagement scout --report scout-report.sarif
 
+pip3 install requests
 export $DEFECT_DOJO_API_TOKEN
 python3 defectdojo_import_scan.py --host $DEFECTDOJO_URL --product $PRODUCT --engagement $ENGAGEMENT  --report $REPORT || true
 ```
