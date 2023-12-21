@@ -4,6 +4,11 @@
 
 [![CI_DevSecOps](https://github.com/adavarski/DevSecOps-GitHub-Actions-node-app/workflows/CI_DevSecOps/badge.svg)](https://github.com/adavarski/DevSevOps-GitHub-Actions-node-app/actions)
 
+## Setup
+
+- Add Snyk API Token in GitHub Repositority Secrets - SNYK_TOKEN (https://app.snyk.io/account to get SNYK_TOKEN - login with GH)
+- Add Docker Registry credentials ( Example -> DockerHub Registry: DOCKERHUB_USERNAME, DOCKERHUB_TOKEN)
+
 ## GitHub Actions Used 
 
 | Step                                                    | Github Action                                                                            | Comments | Open Source Alternative                             |
