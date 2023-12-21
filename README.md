@@ -86,17 +86,26 @@ https://docs.github.com/en/code-security/code-scanning/integrating-with-code-sca
 
 SARIF (Static Analysis Results Interchange Format) 
 
-Example: https://www.defectdojo.org
+Example: https://www.defectdojo.org (vulnerability management tool)
 
-https://github.com/DefectDojo/django-DefectDojo
+Ref: https://github.com/DefectDojo/django-DefectDojo
 
-Add Product -> Add Engagemets (Import Scan results: SARIF files) -> Findings
-
-TODO: defectdojo_send_scans.py or use/create GitHub action
+Defectdojo UI: Add Product -> Add Engagemets (Import Scan results: SARIF/etc. files) -> Findings
 
 <img src="images/defectdojo-nodeapp-overview.png?raw=true" width="800">
 
 <img src="images/defectdojo-nodeapp-findings.png?raw=true" width="800">
+
+TODO: defectdojo_import_scan.py used with GitHub Actions or use marketplace || create new GitHub Action.
+```
+Example:
+
+Defectdojo UI: Add Product(example:NODE-WEB-APP)-> Add New CI/CD Engagemets (example: scout) && Add Tests (Test type: SARIF) 
+
+export DEFECT_DOJO_API_TOKEN=<API v2 Key>
+python3 defectdojo_import_scan.py --host http://192.168.1.99:8080 --product NODE-WEB-APP ---engagement scout --report scout-report.sarif
+
+```
 
 https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml (example python script to upload scan results to defectdojo) 
 
