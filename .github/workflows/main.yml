@@ -200,7 +200,7 @@ jobs:
 #          token: ${{ secrets.GITHUB_TOKEN }}
           
 #  defectdojo_import_scan:
-#   name: Import Scout to DefectDojo
+#   name: Import Scout Scan to DefectDojo
 #   runs-on: ubuntu-latest
 
 #   steps:
