@@ -107,7 +107,7 @@ python3 defectdojo_import_scan.py --host http://192.168.1.99:8080 --product NODE
 
 ```
 
-https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml (example python script to upload scan results to defectdojo) 
+Note: Example python script to upload scan results to defectdoj -> https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml
 
 ### GitHub Code Scanning using GitHub Actions and Github CodeQL for Code scanning (SAST : Static Application Security Testing)
 
