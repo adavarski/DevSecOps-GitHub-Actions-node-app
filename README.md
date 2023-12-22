@@ -121,6 +121,8 @@ curl -X POST "http://192.168.1.99:8080/api/v2/import-scan/" -H Authorization:"To
 ```
 Ref: https://defectdojo.github.io/django-DefectDojo/integrations/api-v2-docs/
 
+Note: SARIF (Static Analysis Results Interchange Format) is an OASIS standard that specifies an output file format compatible with numerous code scanning tools. Even if DefectDojo doesn't officially support a particular scanning tool, it can still import results in the SARIF format.
+
 Note: Example python script to upload scan results to defectdoj -> https://github.com/alexgracianoarj/gitlab-pipeline-demo/blob/main/.gitlab-ci.yml
 
 ### GitHub Code Scanning using GitHub Actions and Github CodeQL for Code scanning (SAST : Static Application Security Testing)
