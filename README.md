@@ -157,9 +157,6 @@ Syntax:
 
 https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
-GH actions we use in this repo:
-
-https://github.com/docker/scout-action
 ...
 
 ### NOTES
